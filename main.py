@@ -1,9 +1,11 @@
-from transformers import GPT2LMHeadModel, GPT2Tokenizer
+from transformers import GPT2LMHeadModel
+
+from transformers import GPT2Tokenizer
 
 model_name = "gpt2-medium"
 tokenizer = GPT2Tokenizer.from_pretrained(model_name)
 model = GPT2LMHeadModel.from_pretrained(model_name)
-
+ 
 prompt_text = "You will become a rival for me to measure my vessel against. you have that hidden potential. That is why I'm allowing you to live. For my sake."
 input_ids = tokenizer.encode(prompt_text, return_tensors="pt")
 
