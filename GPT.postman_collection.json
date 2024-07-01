@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "1b3964e5-abab-4c45-b952-39b2aed461cc",
+		"name": "GPT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32238169"
+	},
+	"item": [
+		{
+			"name": "Generate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "prompt",
+							"value": "Iam John wick",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/generate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"generate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

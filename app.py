@@ -9,8 +9,10 @@ model = GPT2LMHeadModel.from_pretrained(model_name)
 
 @app.route('/generate', methods=['POST'])
 def generate_text():
-    data = request.json
-    prompt_text = data.get('prompt')
+    prompt_text = request.form.get('prompt', '')
+    if not prompt_text:
+        return jsonify({'error': 'No prompt provided'}), 400
+
     input_ids = tokenizer.encode(prompt_text, return_tensors="pt")
 
     output = model.generate(input_ids, max_length=150, num_return_sequences=1, temperature=0.7)
